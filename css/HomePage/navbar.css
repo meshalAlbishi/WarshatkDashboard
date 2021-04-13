@@ -1,0 +1,68 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 30px;
+    z-index: 999;
+    font-family: "Ubuntu", "Poppins", sans-serif;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+    padding: 15px;
+    background: #dc143c;
+}
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .logo img {
+    width: 200px;
+    float: left;
+    height: auto;
+} */
+
+.navbar .logo-text a {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar .logo-text a span {
+    text-decoration: none;
+    color: crimson;
+}
+
+.navbar.sticky .logo-text a span {
+    color: #ffffff;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    color: crimson;
+}
+
+.navbar.sticky .menu li a:hover {
+    color: #ffffff;
+}

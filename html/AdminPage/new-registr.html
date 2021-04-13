@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Admin Dashboard | Registration</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/AdminPage/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/AdminPage/main-dashboard.css" rel="stylesheet">
+    <link href="../../css/AdminPage/dash-navbar.css" rel="stylesheet">
+    <link href="../../css/AdminPage/overview.css" rel="stylesheet">
+    <link href="../../css/loader.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- dashboard-nav -->
+    <!-- import dashboard-nav from dashboard-nav.html -->
+    <div id="inc-dashboard-nav"></div>
+    <!-- ---------------------------------------------------- -->
+
+    <div class="loader"></div>
+
+    <!-- main dashboard -->
+    <section id="main" style="display: none;">
+
+        <!-- <div class="container"> -->
+
+        <div class="row" style=" margin: 0 auto;">
+
+            <!-- left sidebar -->
+            <div class="col-md-3">
+
+                <!-- badges -->
+                <!-- import badges from badges.html -->
+                <div id="inc-badges"></div>
+                <!-- ---------------------------------------------------- -->
+
+
+                <!-- progress -->
+                <!-- import progress from progress.html -->
+                <!-- <div id="inc-progress"></div> -->
+                <!-- ---------------------------------------------------- -->
+
+            </div>
+
+            <!-- Registration.html start here -->
+            <!-- right side -->
+            <div class="col-md-9">
+
+                <div class="panel panel-default">
+
+                    <!-- panel title -->
+                    <div class="panel-heading main-color-bg">
+                        <h3 class="panel-title">ٌRegistration</h3>
+                    </div>
+
+                    <!-- panel body -->
+                    <div class="panel-body">
+
+                        <!-- <div class="row"> -->
+                        <div id="myBtnContainer">
+                            <span class="filter"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+                                Filter By: &nbsp;</span>
+                            <!-- onclick="filterSelection('all')" -->
+                            <button class="btn filter-btn active"> Show all</button>
+                            <button class="btn filter-btn"> New</button>
+                            <button class="btn filter-btn"> Rejected</button>
+                        </div>
+                        <!-- </div> -->
+
+                        <br>
+
+                        <table id="reg-table" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Store Name</th>
+                                    <th>Phone</th>
+                                    <th>Service Type</th>
+                                    <th style="width: 160px;">Commerical No.</th>
+                                    <th>Reg. Date</th>
+
+                                    <th></th> <!-- for buttons -->
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                        <h3 class="text-center">No new Registration found</h3>
+
+                    </div>
+
+                </div>
+
+            </div><!-- Registration.html end here -->
+
+        </div>
+
+        <!-- </div> -->
+
+    </section>
+
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/dashboard/bootstrap.min.js"></script>
+    <script src="../../js/dashboard/dashboard.js"></script>
+
+    <!-- firebase script -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+    <script src="../../Database/config/firebase-config.js"></script>
+    <!--  -->
+
+    <script src="../../js/dashboard/new-registration.js"></script>
+    <!-- <script src="../../js/dashboard/progress.js"></script> -->
+
+</body>
+
+</html>

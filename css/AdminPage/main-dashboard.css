@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+    font-family: "Ubuntu", "Poppins", sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+.main-color-bg {
+    background-color: #b90405 !important;
+    /* background-color: #870105 !important; */
+    /* background-color: #F43E43 !important; figma */
+    /* background-color: #dc143c !important; */
+    border-color: #c0392b !important;
+    color: #ffffff;
+}
+
+.panel {
+    margin-top: 35px;
+}
+
+.panel-heading {
+    color: #ffffff !important;
+}
+
+/* table style */
+
+table th, td {
+    text-align: center;
+}
+
+/*  */
+
+.list-group {
+    margin-top: 35px;
+}
+
+.list-group a {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* progress bar */
+
+.progress-bar {
+    background: #333333;
+    color: #ffffff;
+}
+
+#progress-temp {
+    background-color: #ffffff !important;
+}
+
+/* filter btns */
+
+.filter-btn {
+    border: none;
+    outline: none !important;
+    color: black;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background-color: #ddd;
+}
+
+.filter-btn.active {
+    background-color: #b90405;
+    color: white;
+}
+
+.filter {
+    font-size: 18px;
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/login-register-navbar.css">
+    <link rel="stylesheet" href="../../css/login-register.css">
+    <link rel="stylesheet" href="../../css/HomePage/footer.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYd3UWBX8dvsLiIaySHExvAuS5eu6LqfM&callback=initMap"
+        type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+        </script>
+    <!-- AIzaSyA49SytzlLV0LGn5Ayl_4ovjjdDVeyjdTk -->
+
+    <style>
+        #map {
+            width: 100%;
+            height: 350px;
+        }
+    </style>
+    <title>Register Car Service Provider</title>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <!-- import navbar from HomePage/html/navbar.html -->
+    <div id="inc-navbar"></div>
+    <!-- ---------------------------------------------------- -->
+
+    <div class="all">
+
+        <br>
+        <br>
+        <br>
+
+        <div class="main">
+
+            <div class="header">
+                <h2>Register Car Service Provider</h2>
+            </div>
+
+            <form class="form" id="form" method="POST">
+
+                <!-- phoneNumber -->
+                <div class="form-control">
+                    <label>Phone Number</label>
+                    <input type="text" placeholder="05xxxxxxxx" name="phoneNumber" id="phoneNumber">
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+
+                <!-- Commercial Register -->
+                <div class="form-control">
+                    <label>Commercial Register</label>
+                    <input type="text" placeholder="Commercial Register" name="CommercialRegister"
+                        id="CommercialRegister">
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+
+                <!-- store name -->
+                <div class="form-control">
+                    <label>Store Name</label>
+                    <input type="text" placeholder="Store Name" name="storeName" id="storeName">
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+
+                <!-- city -->
+                <div class="form-control">
+                    <label>City</label>
+                    <input type="text" placeholder="City" name="city" id="city">
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+
+                <!-- email -->
+                <div class="form-control">
+                    <label>Email</label>
+                    <input type="text" placeholder="email@email.com" name="email" id="email">
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+
+                <!-- password -->
+                <div class="form-control">
+                    <label>Password</label>
+                    <input type="password" placeholder="Password" name="password" id="password">
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+
+                <!-- check password -->
+                <div class="form-control">
+                    <label>Check Password</label>
+                    <input type="password" placeholder="Check Password" id="checkPassword">
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+
+                <!-- Service Type -->
+                <div class="form-control">
+                    <label>Service Type</label>
+                    <select id="serviceType" name="serviceType" class="select">
+                        <option disabled selected> Choose Service Type</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="emergency">Emergency Accidents</option>
+                        <option value="maintance">Maintenance</option>
+                        <option value="cleaning">Cleaning</option>
+                    </select>
+                    <small>Error message</small>
+                </div>
+
+                <!-- IBAN -->
+                <div class="form-control">
+                    <label>IBAN</label>
+                    <input type="text" placeholder="SA00 0000 0000 0000 0000 0000" name="IBAN" id="IBAN">
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+
+                <!-- map -->
+                <div class="form-control">
+                    <label>Location</label>
+                    <input type="hidden" value="" name="location" id="location">
+                    <div id="map"></div>
+
+                    <!-- map script -->
+                    <script>
+                        var map, infoWindow, marker, pos;
+
+                        function initMap() {
+                            // initial location
+                            var location = {
+                                lat: 21.485811,
+                                lng: 39.192505
+                            };
+                            map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 14,
+                                center: location
+                            });
+
+                            marker = new google.maps.Marker({
+                                position: location,
+                                map: map
+                            });
+
+                            map.addListener("click", (mapsMouseEvent) => {
+                                var latLng = mapsMouseEvent.latLng.toJSON();
+                                var lat = latLng["lat"];
+                                var lng = latLng["lng"];
+                                setMarker(lat, lng);
+                            });
+
+                            getLocation();
+                        }
+
+                        function setMarker(lat, lng) {
+                            console.log(lat);
+                            console.log(lng);
+                            document.getElementById('location').value = `${lat},${lng}`;
+                            console.log(document.getElementById('location').value);
+                            if (marker) {
+                                marker.setMap(null);
+                            }
+                            marker = new google.maps.Marker({
+                                position: { lat, lng }
+                            });
+
+                            marker.setMap(map);
+                        }
+
+
+
+                        function getLocation() {
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(showPosition);
+                            } else {
+                                x.innerHTML = "Geolocation is not supported by this browser.";
+                            }
+                        }
+
+                        function showPosition(position) {
+                            marker.setMap(null);
+                            pos = {
+                                lat: position.coords.latitude,
+                                lng: position.coords.longitude
+                            };
+                            map.setCenter(pos);
+                            map.setZoom(15);
+                            marker = new google.maps.Marker({
+                                position: pos
+                            });
+                            marker.setMap(map);
+                        }
+
+
+
+                    </script>
+                </div>
+                <button type="submit" style="margin-top:10px;">Register</button>
+
+            </form>
+
+        </div>
+
+        <br>
+        <br>
+
+    </div>
+
+
+
+    <!-- footer -->
+    <!-- import footer from HomePage/html/footer.html -->
+    <div id="inc-footer"></div>
+    <!-- ---------------------------------------------------- -->
+
+    <!-- script -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+    <script src="../../../Database/config/firebase-config.js"></script>
+
+
+    <script type="module" src="../../js/register.js"></script>
+    <!--  -->
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.dash-box {
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dash-box:hover {
+    background-color: #dc143c;
+    color: #ffffff;
+    transform: scale(1.05);
+}

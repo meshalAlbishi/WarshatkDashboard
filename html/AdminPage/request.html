@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Requests</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/AdminPage/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/AdminPage/main-dashboard.css" rel="stylesheet">
+    <link href="../../css/AdminPage/dash-navbar.css" rel="stylesheet">
+    <link href="../../css/AdminPage/overview.css" rel="stylesheet">
+    <link href="../../css/loader.css" rel="stylesheet">
+    <link href="../../css/modal.css" rel="stylesheet">
+    <link href="../../css/AdminPage/request-modal.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- view request modal -->
+    <div class="edit-moadl my-modal-wrapper" id="viewReq">
+        <div class="my-modal">
+
+            <!-- modal header -->
+            <div class="my-modal-header">
+                <h2>Request Information</h2>
+            </div>
+            <!-- modal body -->
+            <div class="my-modal-body">
+
+                <form class="my-form" id="form" autocomplete="off">
+
+                    <div class="my-row">
+                        <!-- Request No -->
+                        <h4>Request Number</h4>
+                        <!-- <label for="requestNumber">Request Number</label> -->
+                        <input type="text" name="requestNumber" disabled id="requestNumber">
+
+                        <!-- Request Date -->
+                        <h4>Request Date</h4>
+                        <!-- <label for="requestDate">Request Date</label> -->
+                        <input type="text" name="requestDate" disabled id="requestDate">
+                    </div>
+
+                    <div class="my-row">
+                        <!-- Progress -->
+                        <h4>Progress</h4>
+                        <!-- <label>Progress</label> -->
+                        <input type="text" name="progress" disabled id="progress">
+
+                        <!-- Status  -->
+                        <h4>Status</h4>
+                        <!-- <label>Status</label> -->
+                        <input type="text" name="status" disabled id="status">
+                    </div>
+
+                    <div class="my-row">
+                        <h3 class="title">Customer Information</h3>
+
+                        <!-- Customer name -->
+                        <h4>Customer Name</h4>
+                        <!-- <label for="CustomerName">Customer Name</label> -->
+                        <input type="text" name="CustomerName" disabled id="CustomerName">
+
+                        <!-- Customer Phone -->
+                        <h4>Customer Phone</h4>
+                        <!-- <label for="CustomerPhone">Customer Name</label> -->
+                        <input type="text" name="CustomerPhone" disabled id="CustomerPhone">
+                    </div>
+
+                    <div class="my-row">
+                        <h3 class="title">Service Provider Information</h3>
+
+                        <!-- Service Provider name -->
+                        <h4>Provider Name</h4>
+                        <!-- <label for="providerName">Service Provider Name</label> -->
+                        <input type="text" name="providerName" disabled id="providerName">
+
+                        <h4>Provider Phone</h4>
+                        <!-- <label for="providerPhone">Service Provider Name</label> -->
+                        <input type="text" name="providerPhone" disabled id="providerPhone">
+                    </div>
+
+                    <div>
+                        <!-- Details -->
+                        <h3 class="title">Details</h3>
+                        <!-- <label for="details">Details</label> -->
+                        <textarea name="details" disabled id="details" my-rows="7" cols="85"></textarea>
+
+                    </div>
+
+                    <div class="my-row">
+
+                        <h3 class="title">Bill Information</h3>
+
+                        <h4>Total Payment</h4>
+                        <input type="text" name="totalPayment" disabled id="totalPayment">
+
+                        <h4>is Paid</h4>
+                        <input type="text" name="isPaid" disabled id="isPaid">
+
+                    </div>
+
+                    <span id="req-btn-modal"></span>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- dashboard-nav -->
+    <!-- import dashboard-nav from dashboard-nav.html -->
+    <div id="inc-dashboard-nav"></div>
+    <!-- ---------------------------------------------------- -->
+
+    <div class="loader"></div>
+
+    <!-- main dashboard -->
+    <section id="main" style="display: none;">
+        <!-- <section id="main"> -->
+
+        <!-- <div class="container"> -->
+
+        <div class="row" style=" margin: 0 auto;">
+
+            <!-- left sidebar -->
+            <div class="col-md-3">
+
+                <!-- badges -->
+                <!-- import badges from badges.html -->
+                <div id="inc-badges"></div>
+                <!-- ---------------------------------------------------- -->
+
+
+                <!-- progress -->
+                <!-- import progress from progress.html -->
+                <div id="inc-progress"></div>
+                <!-- ---------------------------------------------------- -->
+
+            </div>
+
+            <!-- request.html start here -->
+            <!-- right side -->
+            <div class="col-md-9">
+
+                <div class="panel panel-default">
+
+                    <!-- panel title -->
+                    <div class="panel-heading main-color-bg">
+                        <h3 class="panel-title">Requests</h3>
+                    </div>
+
+                    <!-- panel body -->
+                    <div class="panel-body">
+
+                        <div id="myBtnContainer">
+                            <span class="filter"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+                                Filter By: &nbsp;</span>
+                            <button class="btn filter-btn active"> Show all</button>
+                            <button class="btn filter-btn"> Active</button>
+                            <button class="btn filter-btn"> New</button>
+                            <button class="btn filter-btn">Completed</button>
+                            <button class="btn filter-btn"> Rejected</button>
+                            <button class="btn filter-btn"> Closed</button>
+                        </div>
+
+                        <br>
+
+                        <table id="req-table" class="table table-striped table-hover">
+
+                            <thead>
+                                <th>Details</th>
+                                <th>Request No.</th>
+                                <th>Customer Name</th>
+                                <th>Service Provider</th>
+                                <th>Req. Date</th>
+                                <th>Req. Status</th>
+                                <th></th>
+
+                            </thead>
+
+                            <tbody></tbody>
+
+                        </table>
+
+                        <h3 class="text-center">No Requests found</h3>
+
+                    </div>
+
+                </div>
+
+            </div><!-- request.html end here -->
+
+        </div>
+
+        <!-- </div> -->
+
+    </section>
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/dashboard/bootstrap.min.js"></script>
+
+    <!-- firebase script -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+    <script src="../../Database/config/firebase-config.js"></script>
+    <!--  -->
+
+    <script src="../../js/dashboard/dashboard.js"></script>
+    <script src="../../js/dashboard/request.js"></script>
+</body>
+
+</html>

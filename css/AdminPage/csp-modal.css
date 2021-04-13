@@ -1,0 +1,16 @@
+.my-modal {
+    width: 35rem;
+    height: 45rem;
+    margin: 15rem auto;
+}
+
+.my-modal-header {
+    padding: 2rem;
+}
+
+input, select {
+    width: 100%;
+    height: 3.2rem;
+    margin-bottom: 1rem;
+    text-indent: .5rem;
+}

@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* ------ navbar style ------*/
+
+.navbar {
+  /* position: fixed; */
+  width: 100%;
+  padding: 20px;
+  z-index: 999;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+  background: crimson;
+}
+
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .navbar .logo a {
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 600;
+} */
+
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.navbar .menu li a {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+
+/* .logo img {
+  width: 200px;
+  float: left;
+  height: auto;
+} */
+
+.menu-btn {
+  display: block;
+}
+
+.navbar .logo-text a {
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* .navbar .logo-text a span {
+  text-decoration: none;
+  color: crimson;
+} */
+
+/* .navbar.sticky .logo-text a span {
+  color: #ffffff;
+} */

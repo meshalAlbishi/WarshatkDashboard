@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Admin Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/AdminPage/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/AdminPage/main-dashboard.css" rel="stylesheet">
+    <link href="../../css/AdminPage/dash-navbar.css" rel="stylesheet">
+    <link href="../../css/AdminPage/overview.css" rel="stylesheet">
+    <link href="../../css/loader.css" rel="stylesheet">
+    <!--  -->
+</head>
+
+<body>
+
+    <!-- dashboard-nav -->
+    <!-- import dashboard-nav from dashboard-nav.html -->
+    <div id="inc-dashboard-nav"></div>
+    <!-- ---------------------------------------------------- -->
+
+    <div class="loader"></div>
+
+    <!-- main dashboard -->
+    <section id="main" style="display: none;">
+
+        <div class="container">
+
+            <div class="row">
+
+                <!-- left sidebar -->
+                <div class="col-md-3">
+
+                    <!-- badges -->
+                    <!-- import badges from badges.html -->
+                    <div id="inc-badges"></div>
+                    <!-- ---------------------------------------------------- -->
+
+
+                    <!-- progress -->
+                    <!-- import progress from progress.html -->
+                    <!-- <div id="inc-progress"></div> -->
+                    <!-- ---------------------------------------------------- -->
+
+                </div>
+
+
+                <!-- overview.html start here -->
+                <!-- right side -->
+                <div class="col-md-9">
+
+                    <div class="panel panel-default">
+
+                        <!-- panel title -->
+                        <div class="panel-heading main-color-bg">
+                            <h3 class="panel-title">Overview</h3>
+                        </div>
+
+                        <!-- panel body -->
+                        <div class="panel-body">
+
+                            <!-- customer numbers -->
+                            <div class="col-md-3">
+                                <div class="well dash-box">
+                                    <h2>
+                                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                        <span id="cust-num"> </span>
+                                    </h2>
+                                    <h3>Customers</h3>
+                                </div>
+                            </div>
+
+                            <!--  Service Providers numbers -->
+                            <div class="col-md-3">
+                                <div class="well dash-box">
+                                    <h2>
+                                        <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                                        <span id="csp-num"> </span>
+                                    </h2>
+                                    <h3>SPs</h3>
+                                </div>
+                            </div>
+
+                            <!-- Active Request numbers -->
+                            <div class="col-md-3">
+                                <div class="well dash-box">
+                                    <h2>
+                                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                                        <span id="req-num"> </span>
+                                    </h2>
+                                    <h3>Requests</h3>
+                                </div>
+                            </div>
+
+                            <!-- Complaint  numbers -->
+                            <!-- <div class="col-md-3">
+                                <div class="well dash-box">
+                                    <h2 id="cust-num">
+                                        <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+                                        <span id="complaint-num"> </span>
+                                    </h2>
+                                    <h3>Complaints</h3>
+                                </div>
+                            </div> -->
+
+                        </div><!-- end panel body -->
+
+                    </div> <!-- end of panel-->
+
+                </div>
+                <!-- overview.html end here -->
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/dashboard/bootstrap.min.js"></script>
+    <script src="../../js/dashboard/dashboard.js"></script>
+    <script src="../../js/dashboard/overview.js"></script>
+
+    <!-- firebase script -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+    <script src="../../Database/config/firebase-config.js"></script>
+</body>
+
+</html>

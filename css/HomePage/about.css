@@ -1,0 +1,45 @@
+.about .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .about-content .left {
+    width: 45%;
+}
+
+.about .about-content .right {
+    width: 55%;
+}
+
+.about .about-content .right .text {
+    margin-left: 35px;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.about .about-content .right a {
+    display: inline-block;
+    background: crimson;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 8px 30px;
+    margin-top: 20px;
+    border-radius: 7px;
+    border: 2px solid crimson;
+}
+
+.about .about-content .right a:hover {
+    background: none;
+    color: #111111;
+}
+
+.about .about-content .left img {
+    height: 400px;
+    width: 500px;
+    object-fit: cover;
+    border: 4px solid crimson;
+}
