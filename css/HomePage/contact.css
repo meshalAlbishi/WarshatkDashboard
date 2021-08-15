@@ -1,6 +1,6 @@
 .contact .contact-content .column {
-    display: inline-block;
-    width: calc(50% - 30px);
+    display: flex;
+    /* width: calc(50% - 30px); */
 }
 
 .contact .contact-content .left .icons {
@@ -33,7 +33,12 @@
 }
 
 .contact .right {
-    margin-left: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+    /* margin-left: 30%; */
     /* margin-right: 50%; */
 }
 
@@ -73,6 +78,7 @@
 }
 
 .contact .right form .button {
+    margin-top: 15px;
     height: 47px;
     width: 170px;
 }
@@ -97,4 +103,53 @@
 .sub-title a {
     text-decoration: none;
     color: inherit;
+}
+
+@media (max-width: 500px) {
+    section {
+        padding: 30px;
+    }
+    .max-width {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .home .home-content {
+        text-align: center;
+        margin-left: 0px;
+    }
+    .home .home-content .text-1 {
+        font-size: 55px;
+    }
+    .home .home-content .text-2 {
+        font-size: 25px;
+    }
+    .home .home-content .text-2 span {
+        font-size: 30px;
+        margin-left: 0px;
+        position: 0px;
+    }
+    .home .home-content a {
+        font-size: 18px;
+        padding: 10px 30px;
+    }
+    .about .about-content .right .text {
+        font-size: 19px;
+    }
+    .about .about-content .right .text {
+        margin-left: 0px;
+    }
+    .about .about-content .right a {
+        margin-left: 50px;
+    }
+    .contact .right form .fields {
+        flex-direction: column;
+    }
+    .contact .right form .name, .contact .right form .email {
+        margin: 0;
+    }
+    #inc-contact section .title {
+        margin-bottom: 25px;
+        padding-bottom: 0;
+    }
 }
